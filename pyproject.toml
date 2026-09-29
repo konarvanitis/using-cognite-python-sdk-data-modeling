@@ -6,6 +6,7 @@ authors = [{ name = "Cognite", email = "academy@cognite.com" }]
 requires-python = ">=3.11"
 dependencies = [
     "cognite-sdk[pandas]>=8.18.0",
+    "matplotlib>=3.11.2",
     "notebook>=7.5.3",
 ]
 
