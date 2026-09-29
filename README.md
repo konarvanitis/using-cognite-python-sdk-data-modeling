@@ -44,3 +44,15 @@ If you prefer not to use uv, you can install the SDK directly with pip:
 ```bash
 pip install "cognite-sdk[pandas]"
 ```
+
+## Troubleshooting
+
+### WSL: interactive login fails with `gio: ... Operation not supported`
+
+On WSL, Python's interactive OAuth login (`1_Authentication.ipynb`) tries to open your default browser and can fail with an error like:
+
+```
+gio: https://login.microsoftonline.com/...: Operation not supported
+```
+
+This happens because WSL has no browser handler registered for the login URL. Copy the URL from the error message and paste it directly into your Windows browser — the login redirect to `localhost` will reach the notebook correctly thanks to WSL2's automatic localhost port forwarding.
