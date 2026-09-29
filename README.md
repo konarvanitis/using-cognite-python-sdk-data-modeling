@@ -13,20 +13,20 @@ https://cognite-docs.readthedocs-hosted.com/projects/cognite-sdk-python/en/lates
 ### Prerequisites
 
 - Python 3.11+
-- [Poetry](https://python-poetry.org/) (recommended) or pip
+- [uv](https://docs.astral.sh/uv/) (recommended) or pip
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/cognitedata/using-cognite-python-sdk-data-modeling
+git clone https://github.com/konarvanitis/using-cognite-python-sdk-data-modeling
 ```
 
 ### 2. Install dependencies
 
-We recommend using Poetry to manage your Python virtual environment:
+We recommend using uv to manage your Python virtual environment:
 
 ```bash
-poetry install
+uv sync
 ```
 
 This installs the dependencies defined in `pyproject.toml` and creates a virtual environment in the project folder.
@@ -35,11 +35,11 @@ This installs the dependencies defined in `pyproject.toml` and creates a virtual
 
 Open the repo in your IDE (e.g., VS Code) and start exploring the Jupyter notebooks.
 
-> **Note:** You may need to select the Poetry virtual environment as your kernel.
+> **Note:** You may need to select the uv virtual environment (`.venv`) as your kernel.
 
 ## Alternative: pip installation
 
-If you prefer not to use Poetry, you can install the SDK directly with pip:
+If you prefer not to use uv, you can install the SDK directly with pip:
 
 ```bash
 pip install "cognite-sdk[pandas]"
