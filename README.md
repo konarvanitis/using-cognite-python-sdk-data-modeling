@@ -37,6 +37,17 @@ Open the repo in your IDE (e.g., VS Code) and start exploring the Jupyter notebo
 
 > **Note:** You may need to select the uv virtual environment (`.venv`) as your kernel.
 
+### 4. Set up clean notebook diffs (one-time, per clone)
+
+Jupyter stamps your local kernel name and Python version into each notebook's metadata every time you run it, which shows up as noisy, unrelated diffs in `git status`/`git diff`. Run this once after cloning to strip that noise before it ever reaches git:
+
+```bash
+uv run nbstripout --install --attributes .gitattributes
+git config filter.nbstripout.extrakeys "metadata.kernelspec metadata.language_info.version"
+```
+
+This registers a git filter that strips outputs, execution counts, and the kernel/version metadata from notebooks whenever git reads or diffs them — your local `.ipynb` files on disk are untouched, so notebooks still run and show outputs normally in your editor.
+
 ## Alternative: pip installation
 
 If you prefer not to use uv, you can install the SDK directly with pip:

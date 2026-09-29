@@ -16,6 +16,3 @@ package = false
 dev = [
     "nbstripout>=0.9.1",
 ]
-
-[tool.nbstripout]
-extra_keys = "metadata.kernelspec metadata.language_info.version"
